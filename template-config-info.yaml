@@ -1,0 +1,9 @@
+aws-secret:
+  Name: "AWS-Secret-Terraform"
+  Description: "This is a specific template for AWS-Secret"
+  Provider: AWS
+  version:
+    v1:
+      gitUrl: https://github.com/terraform-aws-modules/terraform-aws-secrets-manager
+      path: .
+      branch: master

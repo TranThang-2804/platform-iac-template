@@ -1,0 +1,31 @@
+aws-secret-manager:
+  Name: "Aws-SecretManager"
+  Description: "This is for creating AWS Secret Manager"
+  Provider: AWS
+  IconImageUrl: "https://dsb"
+  version:
+    v1:
+      jsonSchema: | 
+        type: object
+        properties:
+          secretName:
+            type: string
+            examples:
+              - "Hello, world!"
+        required:
+          - secretname
+      jsonSchemaForEditing: |
+        type: object
+        properties:
+          secretName:
+            type: string
+            examples:
+              - "Hello, world!"
+        required:
+          - secretname
+      uiSchema: null
+      template:
+        template-ref:
+          aws-secret:
+            value: |
+              secretName: {{ .secretName }}

@@ -4,7 +4,7 @@ aws-secret-manager:
   Provider: AWS
   IconImageUrl: "https://dsb"
   version:
-    v1:
+    - name: v1
       jsonSchema: | 
         type: object
         properties:
@@ -26,6 +26,7 @@ aws-secret-manager:
       uiSchema: null
       template:
         template-ref:
-          aws-secret:
+          - template: aws-secret
+            version: v1
             value: |
               secretName: {{ .secretName }}
